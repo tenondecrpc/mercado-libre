@@ -4,7 +4,7 @@ import { FindByQueryItemsController } from './controllers/FindByQueryItemsContro
 const router = Router();
 
 // Public routers
-router.get('/', new FindByQueryItemsController().handle);
+router.get('/api/items', new FindByQueryItemsController().handle);
 
 // Private routers
 
