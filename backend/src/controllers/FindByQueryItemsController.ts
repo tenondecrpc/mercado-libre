@@ -15,6 +15,7 @@ class FindByQueryItemsController {
         name: 'Cristian',
         lastname: 'Paniagua'
       };
+      const categories = items.map(item => item.category_id);
       const filterItems = [];
       items.forEach(i => {
         const price = {
@@ -32,7 +33,7 @@ class FindByQueryItemsController {
         };
         filterItems.push(item);
       });
-      const data = {author, items: filterItems};
+      const data = {author, categories, items: filterItems};
       response.status(httpStatusCodes.OK).send(data);
     } catch (error) {
       response.status(httpStatusCodes.BAD_REQUEST).send({message: error.message});
