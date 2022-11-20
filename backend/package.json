@@ -1,10 +1,9 @@
 {
   "name": "mercado-libre",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node-dev --exit-child src/index.ts",
-    "build": "tsc build"
+    "start": "ts-node-dev --exit-child src/index.ts"
   },
   "author": "Cristian Paniagua <tenondecrpc@gmail.com>",
   "license": "MIT",
