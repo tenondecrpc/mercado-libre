@@ -1,16 +1,21 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import GlobalStyle from "./globalStyles";
+import Home from "./pages/Home";
+import ItemList from "./components/ItemList";
+import ItemDetail from "./components/ItemDetail";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hola, soy mercado libre
-        </p>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/items" element={<ItemList />} />
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
