@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import React from "react";
+import React, { useState } from "react";
 import $ from "styled-components";
 import { ReactComponent as SearchIcon } from "./../../assets/img/SearchIcon.svg";
 
@@ -41,10 +41,17 @@ const $Button = $.button`
 `;
 
 const SearchBar = () => {
+  const [search, setSearch] = useState('');
+
+  const findItems = async (event) => {
+    event.preventDefault();
+    // console.log('buscando por...', search);
+  };
+
   return (
     <$SearchBar className="searchbar">
-      <$Form action="">
-        <$Input type="text" placeholder="Buscar productos, marcas y más..." />
+      <$Form onSubmit={findItems}>
+        <$Input type="text" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Buscar productos, marcas y más..." />
         <$Button type="submit">
           <SearchIcon />
         </$Button>
