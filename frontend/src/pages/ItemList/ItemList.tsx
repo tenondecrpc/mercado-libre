@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "../Header";
-import ProductRow from "../ProductRow";
-import Container from "../Container";
+import Header from "../../components/Header";
+import Container from "../../components/Container";
+import ProductRow from "../../components/ProductRow";
 
 const ItemList = () => {
   return (

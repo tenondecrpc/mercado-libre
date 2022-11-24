@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "../Header";
-import Container from "../Container";
-import Discover from "../Discover";
+import Header from "../../components/Header";
+import Container from "../../components/Container";
+import Discover from "../../components/Discover";
 
 const ItemDetail = () => {
   return (

@@ -2,8 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import GlobalStyle from "./globalStyles";
 import Home from "./pages/Home";
-import ItemList from "./components/ItemList";
-import ItemDetail from "./components/ItemDetail";
+import ItemList from "./pages/ItemList";
+import ItemDetail from "./pages/ItemDetail";
 
 const App = () => {
   return (
