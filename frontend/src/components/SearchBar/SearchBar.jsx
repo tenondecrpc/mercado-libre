@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import $ from "styled-components";
 import { ReactComponent as SearchIcon } from "./../../assets/img/SearchIcon.svg";
 
@@ -42,10 +43,15 @@ const $Button = $.button`
 
 const SearchBar = () => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
   const findItems = async (event) => {
     event.preventDefault();
-    // console.log('buscando por...', search);
+    if (!search) {
+      return;
+    };
+    navigate(`/items?search=${search}`);
+    console.info('search by...', search); // TODO: remove
   };
 
   return (

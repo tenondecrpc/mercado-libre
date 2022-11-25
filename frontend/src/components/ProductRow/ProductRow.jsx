@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import $ from "styled-components";
 import ProductCard from "./../ProductCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+
 const settings = {
   infinite: true,
   speed: 500,
@@ -17,20 +17,18 @@ const $ProductRow = $.div`
     margin-top: 30px;
 `;
 
-const ProductRow = () => {
-  const navigate = useNavigate();
-
-  const handleGoDetail = (itemId: string) => {
-    navigate(`/items/${itemId}`);
+const ProductRow = ({ items, onClick }) => {
+  
+  const renderItem = (item) => {
+    return (
+      <ProductCard key={item.id} item={item} onClick={() => onClick(1)} />
+    );
   }
 
   return (
     <$ProductRow>
       <Slider {...settings}>
-        <ProductCard onClick={() => handleGoDetail("1")} />
-        <ProductCard onClick={() => handleGoDetail("2")} />
-        <ProductCard onClick={() => handleGoDetail("3")} />
-        <ProductCard onClick={() => handleGoDetail("4")} />
+        {items.map(renderItem)}
       </Slider>
     </$ProductRow>
   );
