@@ -2,17 +2,16 @@
 import React from "react";
 import FlexWrapper from "./../FlexWrapper";
 import DiscoverItem from "./../DiscoverItem";
-import Right from "./../../assets/img/discoveryRight.webp";
 import $ from "styled-components";
 const $Discover = $.div`
    margin: 30px 0;
 `;
 
-const Discover = () => {
+const Discover = ({ item }) => {
   return (
     <$Discover>
       <FlexWrapper>
-        <DiscoverItem img={Right} />
+        <DiscoverItem item={item} />
       </FlexWrapper>
     </$Discover>
   );

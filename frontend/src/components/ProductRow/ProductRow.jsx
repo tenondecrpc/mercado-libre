@@ -21,7 +21,7 @@ const ProductRow = ({ items, onClick }) => {
   
   const renderItem = (item) => {
     return (
-      <ProductCard key={item.id} item={item} onClick={() => onClick(1)} />
+      <ProductCard key={item.id} item={item} onClick={() => onClick(item.id)} />
     );
   }
 

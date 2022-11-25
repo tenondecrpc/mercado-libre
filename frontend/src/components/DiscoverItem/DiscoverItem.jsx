@@ -42,18 +42,18 @@ const $Price = $.span`
     font-size: 40px;
 `;
 
-const DiscoverItem = ({ title, condition, sold_number, img, price }) => {
+const DiscoverItem = ({ item }) => {
   return (
     <$Item className="discover__item">
       <$ProductDescription>
-        <$Image src={img} />
+        <$Image src={item.picture} />
         <$Title>Descripción del producto</$Title>
-        <$Subtitle>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</$Subtitle>
+        <$Subtitle>{item.description}</$Subtitle>
       </$ProductDescription>
       <$ProductInfo>
-        <$Subtitle>Nuevo - 234 vendidos!</$Subtitle>
-        <$Title>Deco Reverse Sombrero Oxford</$Title>
-        <$Price>$ 160.000</$Price>
+        <$Subtitle>{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.sold_quantity} vendidos!</$Subtitle>
+        <$Title>{item.title}</$Title>
+        <$Price>$ {item.price?.amount?.toLocaleString()}</$Price>
         <Button text={"Comprar"} margin={"40px 0 0 0"} />
       </$ProductInfo>
     </$Item>
